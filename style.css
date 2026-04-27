@@ -221,7 +221,8 @@ ul {
   font-weight: 600;
   font-size: 0.95rem;
   letter-spacing: 0.3px;
-  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  transition: background var(--transition), transform var(--transition),
+    box-shadow var(--transition);
   box-shadow: 0 4px 16px rgba(99, 102, 241, 0.35);
   will-change: transform;
 }
@@ -378,6 +379,12 @@ ul {
   margin-top: 2.5rem;
 }
 
+/* Når du kun har ett prosjekt (penere layout) */
+.projects-grid--single {
+  grid-template-columns: minmax(0, 520px);
+  justify-content: center;
+}
+
 .project-card {
   position: relative;
   background: #fff;
@@ -385,7 +392,8 @@ ul {
   border-radius: calc(var(--radius) + 2px);
   padding: 1.6rem 1.6rem;
   box-shadow: var(--shadow);
-  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition),
+    border-color var(--transition);
   overflow: hidden;
   will-change: transform;
 }
@@ -394,7 +402,7 @@ ul {
   content: "";
   position: absolute;
   inset: -60px;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.10) 0%, transparent 55%);
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 55%);
   transform: translate3d(0, 0, 0);
   opacity: 0.8;
   pointer-events: none;
@@ -433,6 +441,18 @@ ul {
   position: relative;
   color: #475569;
   line-height: 1.8;
+}
+
+.project-link {
+  position: relative;
+  display: inline-flex;
+  margin-top: 1rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.project-link:hover {
+  text-decoration: underline;
 }
 
 /* ---------- Ferdigheter ---------- */
@@ -511,7 +531,8 @@ ul {
   border-radius: 50px;
   font-size: 0.85rem;
   font-weight: 600;
-  transition: background var(--transition), color var(--transition), transform var(--transition), box-shadow var(--transition);
+  transition: background var(--transition), color var(--transition),
+    transform var(--transition), box-shadow var(--transition);
   will-change: transform;
 }
 
@@ -542,7 +563,8 @@ ul {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition);
+  transition: box-shadow var(--transition), transform var(--transition),
+    border-color var(--transition);
   text-decoration: none;
   will-change: transform;
 }
