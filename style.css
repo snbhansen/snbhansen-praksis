@@ -916,3 +916,105 @@ ul {
     width: 0 !important;
   }
 }
+
+/* ---------- Erfaring / Arbeidserfaring ---------- */
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.75rem;
+    margin-top: 2.5rem;
+}
+
+.experience-card {
+    position: relative;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius) + 2px);
+    padding: 1.6rem;
+    box-shadow: var(--shadow);
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    overflow: hidden;
+}
+
+.experience-card::before {
+    content: "";
+    position: absolute;
+    inset: -60px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 55%);
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.experience-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(99, 102, 241, 0.35);
+}
+
+.experience-header {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-bottom: 0.9rem;
+    margin-bottom: 0.9rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.experience-role {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.experience-company {
+    margin-top: 0.2rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.experience-period {
+    margin: 0.15rem 0 0;
+    color: var(--text-muted);
+    font-weight: 700;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.experience-list {
+    position: relative;
+    display: grid;
+    gap: 0.65rem;
+    padding-left: 1.1rem;
+    list-style: disc;
+}
+
+.experience-list li {
+    color: #475569;
+    line-height: 1.75;
+}
+
+/* ---------- Responsivt Design ---------- */
+
+@media (max-width: 900px) {
+    .experience-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .experience-card {
+        padding: 1.25rem;
+    }
+
+    .experience-header {
+        flex-direction: column;
+    }
+
+    .experience-period {
+        white-space: normal;
+    }
+}
